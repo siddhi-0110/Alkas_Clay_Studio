@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> Alka's Clay Studio</title>
+     <link rel="icon" type="image/x-icon" href="/images/minilogo.jpg">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+        <link rel="stylesheet" href="style.css">
+     <style>
+      #cart td{
+        font-size: 25px;
+        text-align: center;
+      }
+
+      #cart td p{
+        font-size: 25px;
+        font-weight: 500;
+      }
+     </style>
+
+</head>
+
+<body>
+
+    <section id="header">
+        <a href="#">
+            <img src="images/logo.jpg" height="80px" width="500px" class="logo" alt=""></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            </ul>    
+        </div>
+
+    </section>
+
+    <section id="page-header" class="about-header">
+        <h2>Your Cart</h2>
+    </section>
+
+    <section id="cart" class="section-p1">
+        <table width=100%>
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <tr>
+                    <td colspan="6"><a href="#"><i class="fa-regular fa-face-frown"><p>Your Cart is Empty.</p></i></a></td>
+                    
+                </tr>
+                
+
+            </tbody>
+            </table>
+            
+    </section>    
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="images/logo.jpg" width="230" height="40" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong> Maharashtra,India</p>
+            <p><strong>Phone: </strong>9876543211</p>
+            <p><strong>Email: </strong>Alkaclaystudio@gmail.com</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-pinterest"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms and Conditions</a>
+            <a href="#">FAQs</a>
+        </div>
+
+        <div class="col">
+            <h4>My account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">My Orders</a>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright © 2023, Alka'sClayStudio. All rights reserved. See our terms of use and privacy notice.</p>
+        </div>
+    </footer>
+
+    <script>
+        const quantityInput = document.getElementById('quantity');
+        const subtotalElement = document.getElementById('subtotal');
+        const totalElement = document.getElementById('total');
+    
+        const productPrice = 190; // Replace with actual product price
+    
+        quantityInput.addEventListener('input', updateSubtotal);
+    
+        function updateSubtotal() {
+            const quantity = parseInt(quantityInput.value);
+            const subtotal = quantity * productPrice;
+            
+            subtotalElement.textContent = `Rs. ${subtotal}`;
+            updateTotal();
+        }
+    
+        function updateTotal() {
+            const subtotal = parseInt(subtotalElement.textContent.split(' ')[1]);
+            totalElement.textContent = `Total: Rs. ${subtotal}`;
+        }
+    </script>
+    
+
+</body>
+
+</html>
